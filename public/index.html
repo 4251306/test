@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Task Board</h1>
+        <p class="app__subtitle">A tiny full-stack demo running in the Cloud Agent environment.</p>
+      </header>
+
+      <form id="new-task" class="composer" autocomplete="off">
+        <input
+          id="task-title"
+          class="composer__input"
+          type="text"
+          placeholder="Add a new task…"
+          aria-label="Task title"
+          required
+        />
+        <button class="composer__button" type="submit">Add</button>
+      </form>
+
+      <section class="board" aria-live="polite">
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty" class="board__empty" hidden>No tasks yet — add one above.</p>
+      </section>
+
+      <footer class="app__footer">
+        <span id="status" class="status">Loading…</span>
+      </footer>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

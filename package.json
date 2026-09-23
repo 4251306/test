@@ -1,0 +1,18 @@
+{
+  "name": "task-board",
+  "version": "1.0.0",
+  "description": "A minimal Task Board web app (Express + vanilla JS) used to exercise the Cloud Agent development environment end to end.",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
