@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#0E2046</color>
+    <color name="navy_deep">#0A1734</color>
+    <color name="player">#102042</color>
+    <color name="orange">#FFA722</color>
+    <color name="blue_text">#8CA7E2</color>
+    <color name="page">#F4F5F8</color>
+    <color name="card">#FFFFFF</color>
+    <color name="muted">#9A9A9A</color>
+    <color name="title">#0E2046</color>
+</resources>
