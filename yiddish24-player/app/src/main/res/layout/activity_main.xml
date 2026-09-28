@@ -33,8 +33,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="News, music, interviews"
+                android:text="אלע אפטיילונגען"
                 android:textColor="@color/blue_text"
+                android:textDirection="rtl"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -51,59 +52,43 @@
             android:textSize="13sp" />
     </LinearLayout>
 
-    <HorizontalScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/navy"
+        android:background="@color/card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingLeft="8dp"
+        android:paddingTop="6dp"
         android:paddingRight="8dp"
-        android:paddingBottom="8dp"
-        android:scrollbars="none">
+        android:paddingBottom="6dp">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/backButton"
             android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/navy"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="צוריק"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/screenTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/newsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_marginRight="6dp"
-                android:background="@color/orange"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                android:text="נייעס"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/videoButton"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_marginRight="6dp"
-                android:background="@color/navy_deep"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                android:text="ווידעא"
-                android:textAllCaps="false"
-                android:textColor="@color/blue_text"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/audioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:background="@color/navy_deep"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                android:text="נגינה"
-                android:textAllCaps="false"
-                android:textColor="@color/blue_text"
-                android:textSize="15sp" />
-        </LinearLayout>
-    </HorizontalScrollView>
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="אפטיילונגען"
+            android:textColor="@color/navy"
+            android:textDirection="rtl"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/statusText"
@@ -113,7 +98,7 @@
         android:paddingTop="6dp"
         android:paddingRight="12dp"
         android:paddingBottom="4dp"
-        android:text="Loading the latest…"
+        android:text="Tap a section. Saved lists stay on the phone."
         android:textColor="@color/muted"
         android:textSize="13sp" />
 
