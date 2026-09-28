@@ -2,74 +2,206 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="6dp"
-        android:text="Yiddish24"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+    android:background="@color/page"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@color/navy"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingTop="10dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp">
 
-        <Button
-            android:id="@+id/newsButton"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="News"
-            android:textSize="14sp" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yiddish 24"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="News, music, interviews"
+                android:textColor="@color/blue_text"
+                android:textSize="12sp" />
+        </LinearLayout>
 
         <Button
-            android:id="@+id/videoButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Videos"
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/audioButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Audio"
-            android:textSize="14sp" />
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@color/orange"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/stopButton"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stop"
-        android:textSize="16sp" />
+        android:background="@color/navy"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/newsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginRight="6dp"
+                android:background="@color/orange"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="נייעס"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/videoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginRight="6dp"
+                android:background="@color/navy_deep"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="ווידעא"
+                android:textAllCaps="false"
+                android:textColor="@color/blue_text"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/audioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@color/navy_deep"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="נגינה"
+                android:textAllCaps="false"
+                android:textColor="@color/blue_text"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/statusText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="4dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="6dp"
+        android:paddingRight="12dp"
         android:paddingBottom="4dp"
         android:text="Loading the latest…"
-        android:textSize="14sp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="100"
-        android:visibility="gone" />
+        android:textColor="@color/muted"
+        android:textSize="13sp" />
 
     <ListView
         android:id="@+id/itemList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:cacheColorHint="@color/page"
+        android:divider="@color/page"
+        android:dividerHeight="8dp"
+        android:padding="8dp" />
+
+    <FrameLayout
+        android:id="@+id/videoPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/navy_deep"
+        android:visibility="gone">
+
+        <SurfaceView
+            android:id="@+id/videoSurface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/closeVideoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:background="@color/orange"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/playerBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/player"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/nowTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@android:color/white"
+            android:textDirection="rtl"
+            android:textSize="15sp" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:progressTint="@color/orange"
+            android:thumbTint="@color/orange" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00"
+                android:textColor="@color/blue_text"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/playPauseButton"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:background="@color/orange"
+                android:text="Pause"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
