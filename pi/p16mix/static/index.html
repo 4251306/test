@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>P16</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">P16</div>
+    <p class="hint">Ultranet goes to the Pico, not the Pi network jack. This screen is the mixer.</p>
+    <div class="status">
+      <span id="link" class="pill">Starting</span>
+      <label>Preset
+        <select id="slot">
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+        </select>
+      </label>
+      <button type="button" id="save">Save</button>
+      <button type="button" id="load">Load</button>
+    </div>
+  </header>
+  <main>
+    <div id="strips" class="strips"></div>
+    <aside class="master">
+      <div class="name">Main</div>
+      <input id="master" class="fader" type="range" min="0" max="100" value="80">
+      <div id="master-read" class="read">80</div>
+      <div class="out-meters">
+        <i id="out-l"></i>
+        <i id="out-r"></i>
+      </div>
+    </aside>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
